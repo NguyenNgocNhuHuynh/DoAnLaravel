@@ -39,6 +39,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name'=>'required',
+            'detail'=>'required', 
+            'quantity'=>'required', 
+            'price'=>'required', 
+            'image'=>'required', 
+        ]);
         $product = new Product;
         $product->name = $request->name;
         $product->detail = $request->detail;    
@@ -77,7 +84,8 @@ class ProductController extends Controller
     public function show($id)
     {
         $products= Product::find($id);
-        return view('admin.page.product.show',compact('products'));
+        $categories = Category::all();
+        return view('admin.page.product.show',compact('products','categories'));
     }
 
     /**
@@ -102,6 +110,13 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'name'=>'required',
+            'detail'=>'required', 
+            'quantity'=>'required', 
+            'price'=>'required', 
+            'image'=>'required', 
+        ]);
         $product = Product::find($id);
         $product->name = $request->name;
         $product->detail = $request->detail;
@@ -111,17 +126,13 @@ class ProductController extends Controller
         if($request->image !=null)
         {
             $request->validate([
-
                 'image'=> 'required|image|mimes:jpg,jpeg,png|max:2048'
-
             ]);
 
             $name = convert_vi_to_en($product->name);  //name : Như Huỳnh -> name: nhu-huynh.png
             $imageName = $name.'.'.$request->image->extension();
             $request->image->move(public_path('admin/img/product'), $imageName);
-            $product->image = $imageName;
-            
-           
+            $product->image = $imageName;      
         }
         $product->save();
         return redirect()->route('product.index');

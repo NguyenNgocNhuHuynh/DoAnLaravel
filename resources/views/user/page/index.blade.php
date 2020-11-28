@@ -14,245 +14,97 @@
 				<div class="wrapper">
 					<!-- first section -->
 					<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
-						<h3 class="heading-tittle text-center font-italic">New Brand Mobiles</h3>
+						<h3 class="heading-tittle text-center font-italic">Samsung</h3>
 						<div class="row">
+
+							@foreach($listspSS ?? '' as $item)
+							
 							<div class="col-md-4 product-men mt-5">
 								<div class="men-pro-item simpleCart_shelfItem">
 									<div class="men-thumb-item text-center">
-										<img src="{{asset('user/images/m1.jpg')}}" alt="">
+										<img height="150px" width="auto" src="{{asset('admin/img/product/'.$item->image)}}" alt="">
 										<div class="men-cart-pro">
 											<div class="inner-men-cart-pro">
-												<a href="single.html" class="link-product-add-cart">Quick View</a>
+												<a href="{{route('show',$item->id)}}" class="link-product-add-cart">Quick View</a>
 											</div>
 										</div>
 									</div>
 									<div class="item-info-product text-center border-top mt-4">
 										<h4 class="pt-1">
-											<a href="single.html">Samsung Galaxy J7</a>
+											<a href="{{route('show',$item->id)}}"> {{$item->name}}</a>
 										</h4>
 										<div class="info-product-price my-2">
-											<span class="item_price">$200.00</span>
-											<del>$280.00</del>
+											<span class="item_price">{{$item->price}}</span>
+											
 										</div>
 										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-											<form action="#" method="post">
+											{{-- <form action="#" method="post">
 												<fieldset>
 													<input type="hidden" name="cmd" value="_cart" />
 													<input type="hidden" name="add" value="1" />
 													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="Samsung Galaxy J7" />
-													<input type="hidden" name="amount" value="200.00" />
+													<input type="hidden" name="item_name" value="{{$item->name}}" />
+													<input type="hidden" name="amount" value="{{$item->price}}" />
 													<input type="hidden" name="discount_amount" value="1.00" />
 													<input type="hidden" name="currency_code" value="USD" />
 													<input type="hidden" name="return" value=" " />
 													<input type="hidden" name="cancel_return" value=" " />
 													<input type="submit" name="submit" value="Add to cart" class="button btn" />
 												</fieldset>
-											</form>
+											</form> --}}
+											<input type="submit" name="submit" value="Add to cart" class="button btn" />
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-4 product-men mt-5">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item text-center">
-										<img src="{{asset('user/images/m2.jpg')}}" alt="">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="single.html" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-										<span class="product-new-top">New</span>
-
-									</div>
-									<div class="item-info-product text-center border-top mt-4">
-										<h4 class="pt-1">
-											<a href="single.html">OPPO A37f</a>
-										</h4>
-										<div class="info-product-price my-2">
-											<span class="item_price">$230.00</span>
-											<del>$250.00</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="OPPO A37f" />
-													<input type="hidden" name="amount" value="230.00" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Add to cart" class="button btn" />
-												</fieldset>
-											</form>
-										</div>
-
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 product-men mt-5">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item text-center">
-										<img src="{{asset('user/images/m3.jpg')}}" alt="">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="single.html" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-										<span class="product-new-top">New</span>
-
-									</div>
-									<div class="item-info-product text-center border-top mt-4">
-										<h4 class="pt-1">
-											<a href="single.html">Apple iPhone X</a>
-										</h4>
-										<div class="info-product-price my-2">
-											<span class="item_price">$280.00</span>
-											<del>$300.00</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="Apple iPhone X" />
-													<input type="hidden" name="amount" value="280.00" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Add to cart" class="button btn" />
-												</fieldset>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
+							@endforeach
 						</div>
 					</div>
 					<!-- //first section -->
 					<!-- second section -->
 					<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
-						<h3 class="heading-tittle text-center font-italic">Tv & Audio</h3>
+						<h3 class="heading-tittle text-center font-italic">Iphone</h3>
 						<div class="row">
+							@foreach($listspIP ?? '' as $item_IP)
 							<div class="col-md-4 product-men mt-5">
 								<div class="men-pro-item simpleCart_shelfItem">
 									<div class="men-thumb-item text-center">
-										<img src="{{asset('user/images/m4.jpg')}}" alt="">
+										<img height="150px" width="auto" src="{{asset('admin/img/product/'.$item_IP->image)}}" alt="">
 										<div class="men-cart-pro">
 											<div class="inner-men-cart-pro">
-												<a href="single.html" class="link-product-add-cart">Quick View</a>
+												<a href="{{route('show',$item_IP->id)}}" class="link-product-add-cart">Quick View</a>
 											</div>
 										</div>
 									</div>
 									<div class="item-info-product text-center border-top mt-4">
 										<h4 class="pt-1">
-											<a href="single.html">Sony 80 cm (32 inches)</a>
+										<a href="{{route('show',$item_IP->id)}}">{{$item_IP->name}}</a>
 										</h4>
 										<div class="info-product-price my-2">
-											<span class="item_price">$320.00</span>
-											<del>$340.00</del>
+											<span class="item_price">{{$item_IP->price}}</span>
+											
 										</div>
 										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-											<form action="#" method="post">
+											{{-- <form action="#" method="post">
 												<fieldset>
 													<input type="hidden" name="cmd" value="_cart" />
 													<input type="hidden" name="add" value="1" />
 													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="Sony 80 cm (32 inches)" />
-													<input type="hidden" name="amount" value="320.00" />
+													<input type="hidden" name="item_name" value="{{$item_IP->name}}" />
+													<input type="hidden" name="amount" value="{{$item_IP->price}}" />
 													<input type="hidden" name="discount_amount" value="1.00" />
 													<input type="hidden" name="currency_code" value="USD" />
 													<input type="hidden" name="return" value=" " />
 													<input type="hidden" name="cancel_return" value=" " />
 													<input type="submit" name="submit" value="Add to cart" class="button btn" />
 												</fieldset>
-											</form>
+											</form> --}}
+											<input type="submit" name="submit" value="Add to cart" class="button btn" />
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-4 product-men mt-5">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item text-center">
-										<img src="{{asset('user/images/m5.jpg')}}" alt="">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="single.html" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-										<span class="product-new-top">New</span>
-
-									</div>
-									<div class="item-info-product text-center border-top mt-4">
-										<h4 class="pt-1">
-											<a href="single.html">Artis Speaker</a>
-										</h4>
-										<div class="info-product-price my-2">
-											<span class="item_price">$349.00</span>
-											<del>$399.00</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="Artis Speaker" />
-													<input type="hidden" name="amount" value="349.00" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Add to cart" class="button btn" />
-												</fieldset>
-											</form>
-										</div>
-
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 product-men mt-5">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item text-center">
-										<img src="{{asset('user/images/m6.jpg')}}" alt="">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="single.html" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-									</div>
-									<div class="item-info-product text-center border-top mt-4">
-										<h4 class="pt-1">
-											<a href="single.html">Philips Speakers</a>
-										</h4>
-										<div class="info-product-price my-2">
-											<span class="item_price">$249.00</span>
-											<del>$300.00</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="Philips Speakers" />
-													<input type="hidden" name="amount" value="249.00" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Add to cart" class="button btn" />
-												</fieldset>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
+							@endforeach
 						</div>
 					</div>
 					<!-- //second section -->
@@ -269,122 +121,50 @@
 					<!-- //third section -->
 					<!-- fourth section -->
 					<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mt-4">
-						<h3 class="heading-tittle text-center font-italic">Large Appliances</h3>
+						<h3 class="heading-tittle text-center font-italic">Xiaomi</h3>
 						<div class="row">
+							@foreach($listspXiaomi ?? '' as $item_XA)
 							<div class="col-md-4 product-men mt-5">
 								<div class="men-pro-item simpleCart_shelfItem">
 									<div class="men-thumb-item text-center">
-										<img src="{{asset('user/images/m7.jpg')}}" alt="">
+										<img height="150px" width="auto" src="{{asset('admin/img/product/'.$item_XA->image)}}" alt="">
 										<div class="men-cart-pro">
 											<div class="inner-men-cart-pro">
-												<a href="single.html" class="link-product-add-cart">Quick View</a>
+												<a href="{{route('show',$item_XA->id)}}" class="link-product-add-cart">Quick View</a>
 											</div>
 										</div>
 									</div>
 									<span class="product-new-top">New</span>
 									<div class="item-info-product text-center border-top mt-4">
 										<h4 class="pt-1">
-											<a href="single.html">Whirlpool 245</a>
+											<a href="{{route('show',$item_XA->id)}}">{{$item_XA->name}}</a>
 										</h4>
 										<div class="info-product-price my-2">
-											<span class="item_price">$230.00</span>
-											<del>$280.00</del>
+											<span class="item_price">{{$item_XA->price}}</span>
+											
 										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-											<form action="#" method="post">
+										<div class="snipcart-details top_brand_home_de	tails item_add single-item hvr-outline-out">
+											{{-- <form action="#" method="post">
 												<fieldset>
 													<input type="hidden" name="cmd" value="_cart" />
 													<input type="hidden" name="add" value="1" />
 													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="Whirlpool 245" />
-													<input type="hidden" name="amount" value="230.00" />
+													<input type="hidden" name="item_name" value="{{$item_XA->name}}" />
+													<input type="hidden" name="amount" value="{{$item_XA->price}}" />
 													<input type="hidden" name="discount_amount" value="1.00" />
 													<input type="hidden" name="currency_code" value="USD" />
 													<input type="hidden" name="return" value=" " />
 													<input type="hidden" name="cancel_return" value=" " />
 													<input type="submit" name="submit" value="Add to cart" class="button btn" />
 												</fieldset>
-											</form>
+											</form> --}}
+											<input type="submit" name="submit" value="Add to cart" class="button btn" />
 										</div>
 
 									</div>
 								</div>
 							</div>
-							<div class="col-md-4 product-men mt-5">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item text-center">
-										<img src="{{asset('user/images/m8.jpg')}}" alt="">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="single.html" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-									</div>
-									<div class="item-info-product text-center border-top mt-4">
-										<h4 class="pt-1">
-											<a href="single.html">BPL Washing Machine</a>
-										</h4>
-										<div class="info-product-price my-2">
-											<span class="item_price">$180.00</span>
-											<del>$200.00</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="BPL Washing Machine" />
-													<input type="hidden" name="amount" value="180.00" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Add to cart" class="button btn" />
-												</fieldset>
-											</form>
-										</div>
-
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 product-men mt-5">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item text-center">
-										<img src="{{asset('user/images/m9.jpg')}}" alt="">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="single.html" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-									</div>
-									<div class="item-info-product text-center border-top mt-4">
-										<h4 class="pt-1">
-											<a href="single.html">Microwave Oven</a>
-										</h4>
-										<div class="info-product-price my-2">
-											<span class="item_price">$199.00</span>
-											<del>$299.00</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="Microwave Oven" />
-													<input type="hidden" name="amount" value="199.00" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Add to cart" class="button btn" />
-												</fieldset>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
+							@endforeach
 						</div>
 					</div>
 					<!-- //fourth section -->
@@ -395,13 +175,29 @@
 			<!-- product right -->
 			<div class="col-lg-3 mt-lg-0 mt-4 p-lg-0">
 				<div class="side-bar p-sm-4 p-3">
-					<div class="search-hotel border-bottom py-2">
-						<h3 class="agileits-sear-head mb-3">Search Here..</h3>
-						<form action="#" method="post">
-							<input type="search" placeholder="Product name..." name="search" required="">
-							<input type="submit" value=" ">
-						</form>
-					</div>
+				
+						<!-- electronics -->
+						<div class="search-hotel border-bottom py-2">
+							<h3 class="agileits-sear-head mb-3">Brand</h3>
+							<form action="#" method="post">
+								<input type="search" placeholder="Search Brand..." name="search" required="">
+								<input type="submit" value=" ">
+							</form>
+							<div class="left-side py-2">
+								<ul>
+									@foreach ($category as $item)
+										
+									
+									<li>
+										<input type="checkbox" class="checked">
+										<span class="span">{{$item->name}}</span>
+									</li>
+									@endforeach
+								</ul>
+							</div>
+						</div>
+	
+	
 					<!-- price -->
 					<div class="range border-bottom py-2">
 						<h3 class="agileits-sear-head mb-3">Price</h3>
@@ -429,173 +225,9 @@
 						</div>
 					</div>
 					<!-- //price -->
-					<!-- discounts -->
-					<div class="left-side border-bottom py-2">
-						<h3 class="agileits-sear-head mb-3">Discount</h3>
-						<ul>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">5% or More</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">10% or More</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">20% or More</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">30% or More</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">50% or More</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">60% or More</span>
-							</li>
-						</ul>
-					</div>
-					<!-- //discounts -->
-					<!-- reviews -->
-					<div class="customer-rev border-bottom left-side py-2">
-						<h3 class="agileits-sear-head mb-3">Customer Review</h3>
-						<ul>
-							<li>
-								<a href="#">
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<span>5.0</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<span>4.0</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star-half"></i>
-									<span>3.5</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<span>3.0</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star-half"></i>
-									<span>2.5</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-					<!-- //reviews -->
-					<!-- electronics -->
-					<div class="left-side border-bottom py-2">
-						<h3 class="agileits-sear-head mb-3">Electronics</h3>
-						<ul>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Accessories</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Cameras & Photography</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Car & Vehicle Electronics</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Computers & Accessories</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">GPS & Accessories</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Headphones</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Home Audio</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Home Theater, TV & Video</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Mobiles & Accessories</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Portable Media Players</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Tablets</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Telephones & Accessories</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Wearable Technology</span>
-							</li>
-						</ul>
-					</div>
-					<!-- //electronics -->
-					<!-- delivery -->
-					<div class="left-side border-bottom py-2">
-						<h3 class="agileits-sear-head mb-3">Cash On Delivery</h3>
-						<ul>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Eligible for Cash On Delivery</span>
-							</li>
-						</ul>
-					</div>
-					<!-- //delivery -->
-					<!-- arrivals -->
-					<div class="left-side border-bottom py-2">
-						<h3 class="agileits-sear-head mb-3">New Arrivals</h3>
-						<ul>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Last 30 days</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Last 90 days</span>
-							</li>
-						</ul>
-					</div>
-					<!-- //arrivals -->
+				
+			
+				
 					<!-- best seller -->
 					<div class="f-grid py-2">
 						<h3 class="agileits-sear-head mb-3">Best Seller</h3>
@@ -632,6 +264,57 @@
 						</div>
 					</div>
 					<!-- //best seller -->
+							<!-- reviews -->
+							<div class="customer-rev border-bottom left-side py-2">
+								<h3 class="agileits-sear-head mb-3">Customer Review</h3>
+								<ul>
+									<li>
+										<a href="#">
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<span>5.0</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<span>4.0</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star-half"></i>
+											<span>3.5</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<span>3.0</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star-half"></i>
+											<span>2.5</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- //reviews -->
 				</div>
 				<!-- //product right -->
 			</div>

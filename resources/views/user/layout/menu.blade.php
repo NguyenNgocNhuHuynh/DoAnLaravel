@@ -1,7 +1,7 @@
 <div class="navbar-inner">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="agileits-navi_search">
+            {{-- <div class="agileits-navi_search">
                 <form action="#" method="post">
                     <select id="agileinfo-nav_search" name="agileinfo_search" class="border" required="">
                         <option value="">All Categories</option>
@@ -20,54 +20,34 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> --}}
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto text-center mr-xl-5">
+                <ul class="navbar-nav ml-auto text-center mr-xl-5 text-center float-left">
                     <li class="nav-item active mr-lg-2 mb-lg-0 mb-2">
-                        <a class="nav-link" href="index.html">Home
+                    <a class="nav-link" href="{{route('home')}}">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Electronics
+                            Category
                         </a>
                         <div class="dropdown-menu">
                             <div class="agile_inner_drop_nav_info p-4">
-                                <h5 class="mb-3">Mobiles, Computers</h5>
+                                <h5 class="mb-3">Mobiles</h5>
                                 <div class="row">
                                     <div class="col-sm-6 multi-gd-img">
                                         <ul class="multi-column-dropdown">
+
+                                            @foreach ($category as $item)
                                             <li>
-                                                <a href="product.html">All Mobile Phones</a>
+                                            <a href="{{route('show_product',$item->id)}}">{{$item->name}}</a>
                                             </li>
-                                            <li>
-                                                <a href="product.html">All Mobile Accessories</a>
-                                            </li>
-                                            <li>
-                                                <a href="product.html">Cases & Covers</a>
-                                            </li>
-                                            <li>
-                                                <a href="product.html">Screen Protectors</a>
-                                            </li>
-                                            <li>
-                                                <a href="product.html">Power Banks</a>
-                                            </li>
-                                            <li>
-                                                <a href="product.html">All Certified Refurbished</a>
-                                            </li>
-                                            <li>
-                                                <a href="product.html">Tablets</a>
-                                            </li>
-                                            <li>
-                                                <a href="product.html">Wearable Devices</a>
-                                            </li>
-                                            <li>
-                                                <a href="product.html">Smart Home</a>
-                                            </li>
+                                            @endforeach
+                                            
                                         </ul>
                                     </div>
-                                    <div class="col-sm-6 multi-gd-img">
+                                    {{-- <div class="col-sm-6 multi-gd-img">
                                         <ul class="multi-column-dropdown">
                                             <li>
                                                 <a href="product.html">Laptops</a>
@@ -91,12 +71,12 @@
                                                 <a href="product.html">Software</a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
+                    {{-- <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Appliances
                         </a>
@@ -169,14 +149,14 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
+                    </li> --}}
                     <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
                         <a class="nav-link" href="about.html">About Us</a>
                     </li>
                     <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
                         <a class="nav-link" href="product.html">New Arrivals</a>
                     </li>
-                    <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
+                    {{-- <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Pages
                         </a>
@@ -190,7 +170,7 @@
                             <a class="dropdown-item" href="checkout.html">Checkout Page</a>
                             <a class="dropdown-item" href="payment.html">Payment Page</a>
                         </div>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>

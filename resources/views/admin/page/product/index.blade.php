@@ -2,7 +2,9 @@
 @section('body')
 <h1 class="text-primary"> Product </h1>  
 <hr>
+<div>
 <a class="btn btn-primary" href="{{route('product.create')}}"> Create </a>
+</div>
 <br>
 <table class="table table-bordered table-hover ">
     <thead class="text-black text-center"> 
@@ -10,7 +12,7 @@
       <th>Name</th>  
       <th>Quantity</th>  
       <th>Price</th>  
-      <th>Detail</th>  
+      <th>Category</th>  
 
       <th colspan="3" class="text-center" >Option</th>
     </thead>
@@ -22,7 +24,7 @@
           <td>{{$product->name}} </td>
           <td>{{$product->quantity}} </td>
           <td>{{$product->price}} </td>
-          <td>{{$product->detail}} </td>
+          <td>{{$product->category->name}} </td>
           
           <td><a href="{{route('product.show',$product->id)}}" class="btn btn-info"> Detail</a></td>
           <td><a href="{{route('product.edit', $product->id)}}" class="btn btn-primary"> Edit</a></td>

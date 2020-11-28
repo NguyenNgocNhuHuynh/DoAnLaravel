@@ -8,6 +8,7 @@
 <a class="btn btn-primary" href="{{route('category.create')}}"> Create </a>
 
 <br>
+
 <div class="form-group">
     <label for="name">Name:</label>
     <label > {{$cate->name}} </label>

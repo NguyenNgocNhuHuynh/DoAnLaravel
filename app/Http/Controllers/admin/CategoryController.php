@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $cate = Category::where('status','1')->get();
+        $cate = Category::all();
         return view('admin.page.category.index',compact('cate'));
     }
 
@@ -58,7 +58,7 @@ class CategoryController extends Controller
     public function show($id)
     {
         $cate = Category::find($id);
-        return view('admin.page.category.show',compact('cate'));
+        return redirect()->route('category.index');
     }
 
     /**
@@ -101,7 +101,13 @@ class CategoryController extends Controller
     public function destroy($id)
     {
        $cate = Category::find($id);
-       $cate->status = false;
+       if($cate->status==true)
+        $cate->status = false;
+       
+       else
+       $cate->status=true;
+      
+
        $cate->save();
        return redirect()->route('category.index');
     }

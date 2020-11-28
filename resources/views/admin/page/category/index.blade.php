@@ -16,7 +16,7 @@
  
      
      
-      <th colspan="3" class="text-center" >Option</th>
+      <th colspan="2" class="text-center" >Option</th>
     </thead>
     <tbody class="text-black">
       @foreach($cate ?? '' as $category)
@@ -24,16 +24,30 @@
          
           <td>{{$category->name}} </td>
         
-          <td><a href="{{route('category.show',$category->id)}}" class="btn btn-info"> Detail</a></td>
+       
           <td><a href="{{route('category.edit', $category->id)}}" class="btn btn-primary"> Edit</a></td>
             
+          @if($category->status==false)
+          <td>
+            <form action="{{route('category.destroy', $category->id)}}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-primary"><i class="fa fa-unlock"></i> Unlock</button>
+          </form>
+            </td>
+           @endif
+
+           @if($category->status==true)
           <td>
           <form action="{{route('category.destroy', $category->id)}}" method="POST">
           @csrf
           @method('DELETE')
-          <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
-          </td>
+          <button type="submit" class="btn btn-success"><i class="fa fa-lock"></i> Lock</button>
+         
+         
           </form>
+        </td>
+        @endif
         </tr>
       @endforeach
     </tbody>

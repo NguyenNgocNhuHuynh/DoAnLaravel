@@ -1,25 +1,42 @@
 @extends('admin.layout.default')
 @section('body')
-
-<h1 class="text-primary"> Category </h1>
-
-<hr>
-
-<a class="btn btn-primary" href="{{route('category.create')}}"> Create </a>
-
-<br>
-<div class="form-group">
-    <label for="name">Name:</label>
-    <label > {{$cate->name}} </label>
-  </div>
-
-  <div class="form-group">
-    <a href="{{route('category.edit', $cate->id)}}" class="btn btn-warning"> Edit</a>
-    
-  </div>
+<center>
+  <h2 class="text-primary"> Product </h2>
+  </center>
   
-  <div class="form-group">
-    <a href="{{route('category.index')}}" class="btn btn-black"> List</a>
-  </div>
-
+    <table class="table table-bordereds ">
+      <thead class="text-black text-center"> 
+        <th>Image</th>  
+        <th>Name</th>  
+        <th>Email</th>  
+        <th>Phone</th>  
+        <th>Address</th>  
+       
+      
+      </thead>
+      <tbody class="text-black">
+       <tr>
+         <td>
+          <label > <img height="70px" width="auto" src="{{asset('admin/img/user/'.$users->image)}}" alt=""> </label>
+         </td>
+         
+         <td>
+          <label > {{$users->name}}  </label>
+         </td>
+         <td>
+          <label >{{$users->email}} </label>
+         </td>
+         <td>
+          <label >{{$users->phone_number}} </label>
+         </td>
+         <td>
+          <label >{{$users->address}} </label>
+         </td>
+       </tr>
+      </tbody>
+    </table>
+    
+    <div class="form-group" >
+      <a href="{{route('user.index')}}" class="btn btn-success"> List</a>
+    </div>
 @endsection

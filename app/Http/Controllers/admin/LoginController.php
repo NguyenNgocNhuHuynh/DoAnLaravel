@@ -5,10 +5,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-use Auth;
+// use Auth;
 
 class LoginController extends Controller
 {
+  
     public function getLogin()
     {
         // if (Auth::check()) {
@@ -32,24 +33,32 @@ class LoginController extends Controller
         // }
 
         
-        $users = User::all(); // 1 bang user
+        $users = User::where('status','1')->get(); // 1 bang user
         $email = $request->email;//email la name cua trang login
         $password = $request->password;
-        $status = 1;
+       
 
         foreach($users as $user)
         {
-            if( $user->email == $email  && $user->password == ($password) && $user->status==1)
+            if( $user->email == $email  && $user->password ==$password)
             {
-                return redirect()->route('home');
+                return redirect()->route('admin.home');
+               
             }
         }
             return redirect()->route('getLogin');
+
+            // if( $request->email == 'admin@gmail.com'  && $request->password == '12345')
+            // {
+            //     return redirect()->route('admin.home');
+            // }
+        
+            // return redirect()->route('getLogin');
     }
-    // public function getLogout()
-    // {
-    //     Auth::logout();
-    //     return view('admin.page.login');
-    // }
+    public function getLogout()
+    {
+      // Auth::logout();
+        return view('admin.page.login');
+    }
 
 }
